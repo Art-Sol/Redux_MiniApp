@@ -1,11 +1,9 @@
 import { connect } from 'react-redux';
-import * as actions from './redux/action';
+import * as actions from '../redux/actions/actions';
 
 
 
 function Likes(props) {
-	console.log('render >', props);
-
 	return ( 
 		<div className="button-controls">
 			<button onClick={props.incrementLikes}>♡ {props.likes}</button>

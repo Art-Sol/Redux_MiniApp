@@ -54,8 +54,8 @@ export const commentsLoad = () => (dispatch) => {
 				payload: res
 			})
 		})
-		.then(res => dispatch(loaderOff()))
-		.catch(e => dispatch(errorOn('Ошибка API')));
+		.then(() => dispatch(loaderOff()))
+		.catch(() => dispatch(errorOn('Ошибка API')));
 }
 
 export const errorOn = (text) => {

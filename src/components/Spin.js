@@ -1,5 +1,5 @@
 import { FidgetSpinner } from 'react-loader-spinner';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 const Spin = () => {
 	const loadingStatus = useSelector(state => state.loadingStatusReducer.loading)

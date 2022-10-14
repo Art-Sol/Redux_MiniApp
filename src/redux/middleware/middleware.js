@@ -1,5 +1,5 @@
-import { COMMENT_CREATE } from "./types"
-import { errorOn } from './action';
+import { COMMENT_CREATE } from "../actions/types"
+import { errorOn } from '../actions/actions';
 
 const badWords = ['козел', 'лох'];
 

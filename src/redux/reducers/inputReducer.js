@@ -1,12 +1,10 @@
-import { INPUT_TEXT } from "./types";
+import { INPUT_TEXT } from "../actions/types";
 
 const initialState = {
 	text: ''
 }
 
 export const inputReducer = (state = initialState, action) => {
-	console.log('inputReducer > ', action)
-
 	switch (action.type) {
 		case INPUT_TEXT:
 			return {

@@ -1,4 +1,4 @@
-import { LOADER_DISPLAY_ON, LOADER_DISPLAY_OFF, ERROR_DISPLAY_OFF, ERROR_DISPLAY_ON } from "./types";
+import { LOADER_DISPLAY_ON, LOADER_DISPLAY_OFF, ERROR_DISPLAY_OFF, ERROR_DISPLAY_ON } from "../actions/types";
 
 const initialState = {
 	loading: false,
@@ -6,8 +6,6 @@ const initialState = {
 }
 
 export const loadingStatusReducer = (state = initialState, action) => {
-	console.log('loadingStatusReducer > ', action)
-
 	switch (action.type) {
 		case LOADER_DISPLAY_ON:
 			return {

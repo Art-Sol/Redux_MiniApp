@@ -1,19 +1,16 @@
 import { useSelector } from 'react-redux';
 
 import './App.css';
-import Likes from './Likes';
-import Title from './Title';
-import Comments from './Comments';
-import Spin from './Spin';
+import Likes from './components/Likes';
+import Title from './components/Title';
+import Comments from './components/Comments';
+import Spin from './components/Spin';
 
 
 function App() {
-	const error = useSelector(state => state.loadingStatusReducer.error);
-
-	console.log('error >> ', error)
+	const { error } = useSelector(state => state.loadingStatusReducer);
 
 	const renderErrorMessage = (error) => error ? <div className='error-message'>{error}</div> : error;
-	
 	const errorMessage = renderErrorMessage(error);
 
 	return (

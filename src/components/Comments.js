@@ -3,10 +3,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import uniqid from 'uniqid';
 
 import SingleComment from './SingleComment';
-import { commentCreate, commentsLoad } from './redux/action';
+import { commentCreate, commentsLoad } from '../redux/actions/actions';
 
 const Comments = (props) => {
-	console.log('comments props > ', props);
 	const dispatch = useDispatch();
 
 	const comments = useSelector(state => state.commentsReducer.comments);
@@ -23,7 +22,7 @@ const Comments = (props) => {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		console.log('submit text comment >', textComment);
+
 		const id = uniqid();
 
 		dispatch(commentCreate(textComment, id));
@@ -38,8 +37,6 @@ const Comments = (props) => {
 	}
 
 	const singleComment = renderComment(comments);
-
-	console.log('comments >>>', comments)
 
 	return (
 		<div className="card-comments">

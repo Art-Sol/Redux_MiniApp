@@ -1,11 +1,11 @@
-import { COMMENT_CREATE, COMMENT_UPDATE, COMMENT_DELETE, COMMENTS_LOAD } from "./types";
+import { COMMENT_CREATE, COMMENT_UPDATE, COMMENT_DELETE, COMMENTS_LOAD } from "../actions/types";
 
 const initialState = {
 	comments: []
 }
 
 export const commentsReducer = (state = initialState, action) => {
-	console.log('commentsReducer > ', action);
+	
 	switch (action.type) {
 		case COMMENT_CREATE:
 			return {
