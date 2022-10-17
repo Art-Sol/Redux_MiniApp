@@ -3,17 +3,17 @@ import { useDispatch, useSelector } from 'react-redux';
 import uniqid from 'uniqid';
 
 import SingleComment from './SingleComment';
-import { commentCreate, commentsLoad } from '../redux/actions/actions';
+import { commentCreate, commentsLoad } from '../redux/slices/commentsSlice';
 
-const Comments = (props) => {
-	const dispatch = useDispatch();
-
+const Comments = () => {
 	const comments = useSelector(state => state.commentsReducer.comments);
+	const dispatch = useDispatch();
 
 	const [textComment, setTextComment] = useState('');
 
 	useEffect(() => {
 		dispatch(commentsLoad());
+		// eslint-disable-next-line
 	}, [])
 
 	const handleInput = (e) => {
@@ -22,9 +22,7 @@ const Comments = (props) => {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-
 		const id = uniqid();
-
 		dispatch(commentCreate(textComment, id));
 	}
 

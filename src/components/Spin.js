@@ -2,7 +2,7 @@ import { FidgetSpinner } from 'react-loader-spinner';
 import { useSelector } from 'react-redux';
 
 const Spin = () => {
-	const loadingStatus = useSelector(state => state.loadingStatusReducer.loading)
+	const loadingStatus = useSelector(state => state.statusReducer.loading)
 	
 	return (
 		<div className='loader-styles'>

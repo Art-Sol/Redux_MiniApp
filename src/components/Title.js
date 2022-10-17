@@ -1,9 +1,8 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { inputText } from '../redux/actions/actions';
+import { inputText } from '../redux/slices/inputSlice';
 
-function Title(props) {
+function Title() {
 	const text = useSelector(state => state.inputReducer.text);
-
 	const dispatch = useDispatch();
 
 	const handleChange = (e) => {
@@ -13,7 +12,7 @@ function Title(props) {
 	return (
 		<div className="card-title">
 			<div className="card-title-top">
-				<input value={text} type="text" onChange={handleChange}/>
+				<input value={text} type="text" onChange={handleChange} placeholder='Введитк текст'/>
 			</div>
 			<p>{text}</p>
 		</div>

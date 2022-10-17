@@ -8,7 +8,7 @@ import Spin from './components/Spin';
 
 
 function App() {
-	const { error } = useSelector(state => state.loadingStatusReducer);
+	const { error } = useSelector(state => state.statusReducer);
 
 	const renderErrorMessage = (error) => error ? <div className='error-message'>{error}</div> : error;
 	const errorMessage = renderErrorMessage(error);

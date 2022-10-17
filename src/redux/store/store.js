@@ -1,12 +1,20 @@
-import { createStore, compose, applyMiddleware } from 'redux';
-import ReduxThunk from 'redux-thunk';
+import { configureStore } from '@reduxjs/toolkit';
 
-import { rootReducer } from '../reducers/rootReducer';
+import likesReducer from '../slices/likesSlice'; 
+import inputReducer from "../slices/inputSlice";
+import commentsReducer from "../slices/commentsSlice";
+import statusReducer from '../slices/loadingStatusSlice';
 import { spamFilter } from '../middleware/middleware';
 
-const store = createStore(rootReducer, compose(
-	applyMiddleware(ReduxThunk, spamFilter),
-	window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-));
+const store = configureStore({
+	reducer: {
+		likesReducer,
+		inputReducer,
+		commentsReducer,
+		statusReducer
+	},
+	middleware: getDefaultMiddleware => getDefaultMiddleware().concat(spamFilter),
+	devTools: process.env.NODE_ENV !== 'production',
+})
 
 export default store;
